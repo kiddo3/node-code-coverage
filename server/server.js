@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const routes = require('./routes');
 
 app.get('/', (req,res) => {
    res.status(404)
@@ -22,6 +23,8 @@ app.get('/users', (req,res) => {
        }
    ]);
 });
+
+app.use('/tests', routes);
 
 app.listen(5000);
 
